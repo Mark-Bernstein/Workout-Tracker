@@ -4,7 +4,21 @@ const path = require("path");
 const mongojs = require("mongojs");
 let db = require("../models");
 
+// router.get("/", function (req, res) {
+//     res.sendFile(path.join(__dirname, "./public/index.html"));
+// });
 
+// router.get("/exercise", function (req, res) {
+//     res.sendFile(path.join(__dirname, "./public/exercise.html"));
+// });
+
+// router.get("/exercise?", function (req, res) {
+//     res.sendFile(path.join(__dirname, "./public/exercise.html"));
+// });
+
+// router.get("/stats", function (req, res) {
+//     res.sendFile(path.join(__dirname, "./public/stats.html"));
+// });
 
 router.get("/api/workouts", (req, res) => {
     db.Workout.find({})
@@ -16,7 +30,7 @@ router.get("/api/workouts", (req, res) => {
         });
 });
 
-router.get("/workouts/range", (req, res) => {
+router.get("/api/workouts/range", (req, res) => {
     db.Workout.find({}).limit(7)
         .then(dbWorkout => {
             res.json(dbWorkout);
