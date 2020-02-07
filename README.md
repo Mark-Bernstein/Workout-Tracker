@@ -25,4 +25,4 @@ The user will be able to:
   Deployed link: https://polar-beach-70768.herokuapp.com/
 
 ## Below is a screenshot of the loaded homepage of the app:
-![Fitness Tracker App Screenshot](/workoutTrackerScreenshot.PNG)
+![Fitness Tracker App Screenshot](/workoutTrackerScreenshot.JPG)
