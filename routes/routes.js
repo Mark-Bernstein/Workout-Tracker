@@ -1,6 +1,5 @@
 const router = require("express").Router();
 const Workout = require("../models/workout.js");
-const path = require("path");
 const mongojs = require("mongojs");
 let db = require("../models");
 
@@ -24,37 +23,6 @@ router.get("/api/workouts/range", (req, res) => {
             res.json(err);
         });
 });
-
-// // Add a new workout
-// router.post("/api/workouts", ({ body }, res) => {
-//     console.log(body)
-//     let newWorkout = {
-//         exercises:
-//         {
-//             type: body.type,
-//             name: body.name,
-//             duration: body.duration,
-//             weight: body.weight,
-//             reps: body.reps,
-//             sets: body.sets,
-//             distance: body.distance
-//         },
-
-//     }
-//     Workout.create(newWorkout, (err, result) => {
-//         if (err) {
-//             console.log(err)
-//         }
-//         console.log(result)
-//     })
-//         .then(dbWorkout => {
-//             console.log(dbWorkout)
-//             res.json(dbWorkout);
-//         })
-//         .catch(err => {
-//             res.status(400).json(err);
-//         });
-// });
 
 // POST route for saving a new post
 router.post("/api/workouts", function (req, res) {
@@ -118,19 +86,5 @@ router.put("/api/workouts/:id", (req, res) => {
             });
     }
 });
-
-// //add the exercise to the current workout
-// router.put("/api/workouts/:id", (req, res) => {
-//     let exercise = req.body;
-//     Workout.findByIdAndUpdate(req.params.id,
-//         { $push: { exercises: exercise } },
-//         { new: true })
-//         .then(function (dbWorkout) {
-//             res.json(dbWorkout);
-//         })
-//         .catch(err => {
-//             res.status(400).json(err);
-//         });
-// });
 
 module.exports = router;
